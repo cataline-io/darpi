@@ -1,0 +1,18 @@
+@import './normalize.scss';
+@import './themes.scss';
+@import './mixins.scss';
+
+form.darpi {
+  display: grid;
+  gap: 20px;
+  @import './switch.scss';
+  @import './field.scss';
+  @import './label.scss';
+  @import './input.scss';
+  @import './error.scss';
+  @import './select.scss';
+  @import './textarea.scss';
+  @import './file.scss';
+  @import './checkbox.scss';
+  @import './radio-group.scss';
+}

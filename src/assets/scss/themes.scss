@@ -1,0 +1,27 @@
+form.darpi {
+  --primary: #018ffb;
+  --white: #fff;
+  --field-border-radius: 10px;
+
+  &.dark-theme {
+    --primary-hover: #1d2f44;
+    --enabled: #2b2f39;
+    --disabled: #1b1f27;
+    --danger: #913540;
+    --text-1: #babdc5; // normal text
+    --text-2: #5f6072; // placeholder
+    --text-3: #424753; // disabled text
+    --select-option-hover: #232832;
+  }
+
+  &.light-theme {
+    --primary-hover: #e2f1ff;
+    --enabled: #ebecee;
+    --disabled: #f5f5f5;
+    --danger: #ff4651;
+    --text-1: #858a98; // normal text
+    --text-2: #babdc5; // placeholder
+    --text-3: #dcdee2; // disabled text
+    --select-option-hover: #fff;
+  }
+}

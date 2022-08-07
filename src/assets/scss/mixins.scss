@@ -1,0 +1,24 @@
+@mixin input-base-style() {
+  background-color: var(--enabled);
+  color: var(--text-1);
+  border: 1px solid var(--enabled);
+  border: none;
+  border-radius: 10px;
+  padding: 10px 15px;
+  outline: none;
+  width: 100%;
+  box-sizing: border-box;
+  &::placeholder {
+    color: var(--text-2);
+  }
+}
+
+@mixin input-disabled-style() {
+  background-color: var(--disabled);
+  color: var(--text-3);
+  border: 1px solid var(--disabled);
+  cursor: not-allowed;
+  &::placeholder {
+    color: var(--text-3);
+  }
+}

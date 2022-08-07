@@ -1,0 +1,71 @@
+// normal
+.select-container {
+  position: relative;
+  .trigger {
+    @include input-base-style();
+    display: grid;
+    grid-template-columns: max-content max-content;
+    justify-content: space-between;
+    .arrows {
+      path {
+        fill: var(--text-1);
+      }
+    }
+  }
+  .options {
+    border-radius: var(--field-border-radius);
+    background-color: var(--enabled);
+    list-style: none;
+    padding: 10px;
+    position: absolute;
+    top: 29px;
+    z-index: 999;
+    width: 100%;
+    box-sizing: border-box;
+    .item {
+      border-radius: calc(var(--field-border-radius) + 5px);
+      color: var(--text-1);
+      padding: 10px 15px;
+      display: grid;
+      grid-template-columns: 25px 1fr;
+      grid-template-areas: 'check text';
+      align-items: center;
+      &.hover {
+        background-color: var(--select-option-hover);
+      }
+      &.disabled {
+        color: var(--text-2);
+        cursor: not-allowed;
+      }
+      .text {
+        grid-area: text;
+      }
+      .check {
+        grid-area: check;
+        path { 
+          fill: var(--primary) !important;
+        }
+      }
+    }
+  }
+}
+
+// with-error
+.select-container.has-error {
+  .trigger {
+    border: 1px solid var(--danger);
+  }
+}
+
+// is-disabled
+.select-container.is-disabled {
+  .trigger {
+    cursor: not-allowed;
+    color: var(--text-3);
+  }
+  .arrows {
+    path {
+      fill: var(--text-3);
+    }
+  }
+}

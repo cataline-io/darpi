@@ -1,0 +1,6 @@
+export { default as Array } from './array'
+export { default as Boolean } from './boolean'
+export { default as File } from './file'
+export { default as Mixed } from './mixed'
+export { default as Number } from './number'
+export { default as String } from './string'

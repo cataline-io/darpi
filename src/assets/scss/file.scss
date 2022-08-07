@@ -1,0 +1,64 @@
+.file-container {
+  input[type='file'] {
+    display: none;
+  }
+  label {
+    @include input-base-style();
+    padding-right: calc(15px + 26px);
+    display: grid;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    cursor: pointer;
+    position: relative;
+    .filename {
+      color: var(--text-2);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .upload-icon {
+      position: absolute;
+      right: 6px;
+      g {
+        g {
+          stroke: var(--text-1);
+        }
+        path {
+          fill: var(--text-1);
+        }
+      }
+    }
+  }
+  &.has-file {
+    label {
+      .filename {
+        color: var(--text-1);
+      }
+      
+    }
+  }
+  &.is-disabled {
+    label {
+      @include input-disabled-style();
+      cursor: not-allowed;
+      .filename {
+        color: var(--text-3);
+      }
+      .upload-icon {
+        g {
+          g {
+            stroke: var(--text-3);
+          }
+          path {
+            fill: var(--text-3);
+          }
+        }
+      }
+    }
+  }
+  &.has-error {
+    label {
+      border: 1px solid var(--danger);
+    }
+  }
+}

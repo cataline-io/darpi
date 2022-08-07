@@ -1,0 +1,31 @@
+.textarea-container {
+  textarea {
+    @include input-base-style();
+    resize: none;
+  }
+  &.has-error {
+    textarea {
+      border: 1px solid var(--danger);
+    }
+  }
+  &.resize-vertical {
+    textarea {
+      resize: vertical;
+    }
+  }
+  &.resize-horizontal {
+    textarea {
+      resize: horizontal;
+    }
+  }
+  &.resize-both {
+    textarea {
+      resize: both;
+    }
+  }
+  &.is-disabled {
+    textarea {
+      @include input-disabled-style();
+    }
+  }
+}

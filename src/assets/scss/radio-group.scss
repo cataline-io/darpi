@@ -1,0 +1,71 @@
+.radio-group-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 20px;
+  label {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    .text {
+      color: var(--text-1);
+    }
+    .checkmark {
+      height: 20px;
+      width: 20px;
+      border: 1px solid var(--primary);
+      border-radius: 50%;
+      position: relative;
+      background-color: transparent;
+      transition: 0.15s ease-in-out;
+      cursor: pointer;
+      &:after {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background-color: #fff;
+      }
+      &:hover {
+        background-color: var(--primary-hover);
+      }
+    }
+    input[type='radio'] {
+      display: none;
+      &:disabled {
+        ~ .text {
+          color: var(--text-3);
+          cursor: not-allowed;
+        }
+        ~ .checkmark {
+          border-color: var(--text-3);
+          cursor: not-allowed;
+          &:hover {
+            background-color: transparent;
+          }
+        }
+      }
+      &:checked {
+        ~ .checkmark {
+          background-color: var(--primary);
+          &:after {
+            content: '';
+          }
+        }
+      }
+      &:disabled:checked {
+        ~ .checkmark {
+          background-color: var(--text-3);
+          &:after {
+            background-color: var(--text-2);
+          }
+        }
+      }
+    }
+  }
+}

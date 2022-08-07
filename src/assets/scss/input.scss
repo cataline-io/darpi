@@ -1,0 +1,102 @@
+$inputs: 'input[type="text"], input[type="email"], input[type="password"], input[type="number"], input[type="search"], input[type="tel"]';
+
+.input-container {
+  position: relative;
+  &.is-disabled {
+    #{$inputs} {
+      @include input-disabled-style();
+    }
+
+    .prefix,
+    .suffix,
+    .prepend,
+    .append {
+      background-color: var(--disabled);
+      color: var(--text-3);
+    }
+
+    .prefix,
+    .prepend {
+      border: 1px solid var(--disabled);
+    }
+
+    .suffix,
+    .append {
+      border: 1px solid var(--disabled);
+    }
+  }
+
+  &.has-error {
+    #{$inputs},
+    .prefix,
+    .suffix,
+    .prepend,
+    .append {
+      border: 1px solid var(--danger);
+    }
+  }
+
+  #{$inputs} {
+    @include input-base-style();
+    grid-area: input;
+  }
+
+  &.has-prefix,
+  &.has-suffix,
+  &.has-prepend,
+  &.has-append {
+    display: grid;
+    grid-auto-flow: column;
+    grid-template-areas: 'before input after';
+    grid-template-columns: max-content 1fr max-content;
+  }
+
+  &.has-prefix,
+  &.has-prepend {
+    #{$inputs} {
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+      border-left: none;
+    }
+  }
+
+  &.has-suffix,
+  &.has-append {
+    #{$inputs} {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-right: none;
+    }
+  }
+
+  .prefix,
+  .suffix,
+  .prepend,
+  .append {
+    background-color: var(--enabled);
+    color: var(--text-1);
+    display: grid;
+    justify-content: center;
+    align-content: center;
+  }
+
+  .prefix,
+  .prepend {
+    grid-area: before;
+    padding-left: 15px;
+    border-right: none !important;
+    border: 1px solid var(--enabled);
+    border-top-left-radius: var(--field-border-radius);
+    border-bottom-left-radius: var(--field-border-radius);
+  }
+
+  .suffix,
+  .append {
+    grid-area: after;
+    padding-right: 15px;
+    border-left: none !important;
+    border: 1px solid var(--enabled);
+    border-top-right-radius: var(--field-border-radius);
+    border-bottom-right-radius: var(--field-border-radius);
+  }
+}

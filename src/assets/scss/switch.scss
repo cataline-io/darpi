@@ -1,0 +1,61 @@
+.switch-container {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: max-content;
+  gap: 8px;
+  input[type='checkbox'] {
+    display: none;
+  }
+  .slot-content {
+    color: var(--text-1);
+  }
+  .toggle {
+    position: relative;
+    width: 40px;
+    height: 22.11px;
+    cursor: pointer;
+    background-color: transparent;
+    border: 1px solid var(--primary);
+    transition: 0.4s;
+    border-radius: 34px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 3px;
+      top: 50%;
+      transform: translateY(-50%);
+      height: 14.82px;
+      width: 14.82px;
+      background-color: var(--primary);
+      transition: 0.4s;
+      border-radius: 50%;
+    }
+  }
+  &.on {
+    .toggle {
+      background-color: var(--primary);
+      &:before {
+        transform: translateX(18px) translateY(-50%);
+        background-color: #fff;
+      }
+    }
+  }
+  &.is-disabled {
+    .slot-content {
+      cursor: not-allowed;
+    }
+    .toggle {
+      cursor: not-allowed;
+      border: 1px solid var(--text-3);
+      &:before {
+        background-color: var(--text-2);
+      }
+    }
+
+    &.on {
+      .toggle {
+        background-color: var(--text-3);
+      }
+    }
+  }
+}

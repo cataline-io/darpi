@@ -1,0 +1,79 @@
+.checkbox-container {
+  position: relative;
+  input[type='checkbox'] {
+    display: none;
+  }
+  label {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    align-items: center;
+    gap: 8px;
+    width: max-content;
+    .checkmark {
+      cursor: pointer;
+      height: 20px;
+      width: 20px;
+      border-radius: 7px;
+      background-color: transparent;
+      border: 1px solid var(--primary);
+      transition: 0.2s ease-in-out;
+      &:hover {
+        background-color: var(--primary-hover);
+      }
+      &:after {
+        position: absolute;
+        left: 8px;
+        top: 4px;
+        width: 4px;
+        height: 10px;
+        border: solid #fff;
+        border-width: 0 2px 2px 0;
+        transform: rotate(45deg);
+      }
+    }
+    .slot-content {
+      color: var(--text-1);
+    }
+  }
+
+  // is checked
+  &.is-checked {
+    label {
+      .checkmark {
+        background-color: var(--primary);
+        &:after {
+          content: '';
+        }
+      }
+    }
+  }
+
+  // is disabled
+  &.is-disabled {
+    label {
+      .checkmark {
+        border-color: var(--text-2);
+        cursor: not-allowed;
+        &:hover {
+          background-color: transparent;
+        }
+      }
+      .slot-content {
+        color: var(--text-2);
+      }
+    }
+  }
+
+  // is disabled and checked
+  &.is-disabled.is-checked {
+    label {
+      .checkmark {
+        background-color: transparent;
+        &:after {
+          border: solid var(--text-2);
+          border-width: 0 2px 2px 0;
+        }
+      }
+    }
+  }
+}

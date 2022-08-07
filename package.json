@@ -1,0 +1,39 @@
+{
+  "name": "@cataline.io/darpi",
+  "version": "1.1.0",
+  "type": "module",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/darpi.umd.cjs",
+  "module": "./dist/darpi.js",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "import": "./dist/darpi.js",
+      "require": "./dist/darpi.umd.cjs"
+    },
+    "./dist/style.css": {
+      "import": "./dist/style.css",
+      "require": "./dist/style.css"
+    }
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && vue-tsc --noEmit",
+    "postbuild": "sass --no-source-map --style=compressed ./src/assets/scss/index.scss ./dist/style.css",
+    "preview": "vite preview"
+  },
+  "peerDependencies": {
+    "vue": "^3.2.37"
+  },
+  "devDependencies": {
+    "@types/node": "^18.6.4",
+    "@vitejs/plugin-vue": "^3.0.0",
+    "sass": "^1.54.3",
+    "typescript": "^4.6.4",
+    "vite": "^3.0.0",
+    "vite-plugin-dts": "^1.4.1",
+    "vue-tsc": "^0.38.4"
+  }
+}
