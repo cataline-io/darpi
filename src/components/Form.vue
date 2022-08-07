@@ -19,7 +19,6 @@ const props = defineProps<Props>()
 const emit = defineEmits(['submit'])
 
 const theme = computed(() => {
-  console.log(baseConfig.theme)
   switch (baseConfig.theme) {
     case 'dark':
       return 'dark-theme'
