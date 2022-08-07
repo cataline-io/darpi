@@ -53,8 +53,6 @@ export default defineComponent({
 </script>
 ```
 
-Then, template
-
 ```vue
 <template>
   <Form :form="form" @submit="send">
