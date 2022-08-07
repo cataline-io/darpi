@@ -14,7 +14,7 @@ Composition API
 
 ```vue
 <script setup lang="ts">
-import { Form, Field, darpi } from '@cataline.io/dapi'
+import { Form, Field, darpi } from '@cataline.io/darpi'
 
 const form = darpi.newForm({
   fullName: darpi.string().required().minWords(2),
@@ -32,7 +32,7 @@ Option API
 ```vue
 <script lang="ts">
 import { defineComponent } from 'vue'
-import { Form, Field, darpi } from '@/index'
+import { Form, Field, darpi } from '@cataline.io/darpi'
 
 export default defineComponent({
   components: { Form, Field },
