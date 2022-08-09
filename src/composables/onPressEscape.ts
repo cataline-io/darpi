@@ -1,11 +1,19 @@
-import { useEventListener } from './useEventListener'
+import { onMounted, onUnmounted, unref } from 'vue'
 
 type Callback = (event: KeyboardEvent) => void
 
 export function onPressEscape(callback: Callback) {
-  useEventListener(document, 'keydown', (event: KeyboardEvent) => {
+  function escapeChecker(event: KeyboardEvent) {
     if (event.key === 'Escape') {
       callback(event)
     }
+  }
+
+  onMounted(() => {
+    document.addEventListener('keydown', escapeChecker)
+  })
+
+  onUnmounted(() => {
+    document.removeEventListener('keydown', escapeChecker)
   })
 }
