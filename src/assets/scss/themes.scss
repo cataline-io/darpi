@@ -1,6 +1,5 @@
 form.darpi {
   --primary: #018ffb;
-  --white: #fff;
   --field-border-radius: 10px;
 
   &.dark-theme {
@@ -12,16 +11,20 @@ form.darpi {
     --text-2: #5f6072; // placeholder
     --text-3: #424753; // disabled text
     --select-option-hover: #232832;
+    --select-option-scroll-bar: var(--disabled);
+    --field-border: var(--text-3);
   }
 
   &.light-theme {
     --primary-hover: #e2f1ff;
-    --enabled: #ebecee;
+    --enabled: #fff;
     --disabled: #f5f5f5;
     --danger: #ff4651;
     --text-1: #858a98; // normal text
     --text-2: #babdc5; // placeholder
     --text-3: #dcdee2; // disabled text
-    --select-option-hover: #fff;
+    --select-option-hover: var(--disabled);
+    --select-option-scroll-bar: var(--text-2);
+    --field-border: var(--text-2);
   }
 }

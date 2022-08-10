@@ -3,7 +3,6 @@ import '@/assets/scss/index.scss'
 import { configure } from '@/index'
 
 configure({
-  theme: 'dark',
   locale: 'ptBR'
 })
 

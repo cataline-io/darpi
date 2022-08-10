@@ -6,17 +6,19 @@
     </button>
 
     <ul class="options" v-show="expanded">
-      <li
-        v-for="({ text, value, disabled, selected }, index) in options"
-        :key="index"
-        :class="['item', { disabled, selected }]"
-        @click="disabled ? null : onSelect(value)"
-        @mouseenter="onMouseEnter"
-        @mouseleave="onMouseLeave"
-      >
-        <Check v-show="selected" />
-        <span class="text">{{ text }}</span>
-      </li>
+      <div class="scroll">
+        <li
+          v-for="({ text, value, disabled, selected }, index) in options"
+          :key="index"
+          :class="['item', { disabled, selected }]"
+          @click="disabled ? null : onSelect(value)"
+          @mouseenter="onMouseEnter"
+          @mouseleave="onMouseLeave"
+        >
+          <Check v-show="selected" />
+          <span class="text">{{ text }}</span>
+        </li>
+      </div>
     </ul>
   </div>
 </template>
@@ -41,7 +43,8 @@ const { selectedText } = useSelectedText()
 
 const classes = computed(() => ({
   'has-error': form.errors.hasAnyIn(field.name),
-  'is-disabled': field.disabled
+  'is-disabled': field.disabled,
+  'has-scroll': options.value.length > 6
 }))
 
 options.value.forEach(({ selected, value }) => {

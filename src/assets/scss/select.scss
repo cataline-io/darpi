@@ -14,6 +14,7 @@
   }
   .options {
     border-radius: var(--field-border-radius);
+    border: 1px solid var(--field-border);
     background-color: var(--enabled);
     list-style: none;
     padding: 10px;
@@ -22,29 +23,32 @@
     z-index: 999;
     width: 100%;
     box-sizing: border-box;
-    .item {
-      border-radius: calc(var(--field-border-radius) + 5px);
-      color: var(--text-1);
-      padding: 10px 15px;
-      display: grid;
-      grid-template-columns: 25px 1fr;
-      grid-template-areas: 'check text';
-      align-items: center;
-      cursor: pointer;
-      &.hover {
-        background-color: var(--select-option-hover);
-      }
-      &.disabled {
-        color: var(--text-2);
-        cursor: not-allowed;
-      }
-      .text {
-        grid-area: text;
-      }
-      .check {
-        grid-area: check;
-        path { 
-          fill: var(--primary) !important;
+    .scroll {
+      .item {
+        border-radius: calc(var(--field-border-radius) + 5px);
+        color: var(--text-1);
+        padding: 10px 15px;
+        display: grid;
+        grid-template-columns: 25px 1fr;
+        grid-template-areas: 'check text';
+        align-items: center;
+        cursor: pointer;
+        &.hover {
+          background-color: var(--select-option-hover);
+        }
+
+        &.disabled {
+          color: var(--text-2);
+          cursor: not-allowed;
+        }
+        .text {
+          grid-area: text;
+        }
+        .check {
+          grid-area: check;
+          path {
+            fill: var(--primary) !important;
+          }
         }
       }
     }
@@ -55,6 +59,28 @@
 .select-container.has-error {
   .trigger {
     border: 1px solid var(--danger);
+  }
+}
+
+// has scroll
+.select-container.has-scroll {
+  .options {
+    max-height: 250px;
+    .scroll {
+      max-height: 230px;
+      padding-right: 1rem;
+      overflow-y: scroll;
+      &::-webkit-scrollbar {
+        width: 7px;
+      }
+      &::-webkit-scrollbar-thumb {
+        border-radius: 10px;
+        background-color: var(--select-option-scroll-bar);
+      }
+      &::-webkit-scrollbar-track {
+        background-color: transparent;
+      }
+    }
   }
 }
 

@@ -1,8 +1,7 @@
 @mixin input-base-style() {
   background-color: var(--enabled);
   color: var(--text-1);
-  border: 1px solid var(--enabled);
-  border: none;
+  border: 1px solid var(--field-border);
   border-radius: 10px;
   padding: 10px 15px;
   outline: none;

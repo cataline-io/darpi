@@ -17,12 +17,12 @@ $inputs: 'input[type="text"], input[type="email"], input[type="password"], input
 
     .prefix,
     .prepend {
-      border: 1px solid var(--disabled);
+      border: 1px solid var(--field-border);
     }
 
     .suffix,
     .append {
-      border: 1px solid var(--disabled);
+      border: 1px solid var(--field-border);
     }
   }
 
@@ -85,7 +85,7 @@ $inputs: 'input[type="text"], input[type="email"], input[type="password"], input
     grid-area: before;
     padding-left: 15px;
     border-right: none !important;
-    border: 1px solid var(--enabled);
+    border: 1px solid var(--field-border);
     border-top-left-radius: var(--field-border-radius);
     border-bottom-left-radius: var(--field-border-radius);
   }
@@ -95,7 +95,7 @@ $inputs: 'input[type="text"], input[type="email"], input[type="password"], input
     grid-area: after;
     padding-right: 15px;
     border-left: none !important;
-    border: 1px solid var(--enabled);
+    border: 1px solid var(--field-border);
     border-top-right-radius: var(--field-border-radius);
     border-bottom-right-radius: var(--field-border-radius);
   }
