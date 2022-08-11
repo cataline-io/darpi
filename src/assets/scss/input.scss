@@ -80,12 +80,19 @@ $inputs: 'input[type="text"], input[type="email"], input[type="password"], input
     align-content: center;
   }
 
+
+  .prefix,
+  .prepend,
+  .suffix,
+  .append {
+    border: 1px solid var(--field-border);
+  }
+
   .prefix,
   .prepend {
     grid-area: before;
     padding-left: 15px;
     border-right: none !important;
-    border: 1px solid var(--field-border);
     border-top-left-radius: var(--field-border-radius);
     border-bottom-left-radius: var(--field-border-radius);
   }
@@ -95,7 +102,6 @@ $inputs: 'input[type="text"], input[type="email"], input[type="password"], input
     grid-area: after;
     padding-right: 15px;
     border-left: none !important;
-    border: 1px solid var(--field-border);
     border-top-right-radius: var(--field-border-radius);
     border-bottom-right-radius: var(--field-border-radius);
   }

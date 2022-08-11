@@ -31,7 +31,7 @@ const classes = computed(() => ({
 }))
 
 const filename = computed(() => {
-  const file = <File>form.values.get(field.name)
+  const file = form.values.get(field.name) as File
 
   if (file) {
     return file.name
@@ -43,8 +43,8 @@ const filename = computed(() => {
 })
 
 function onChange(event: Event) {
-  const target = <HTMLInputElement>event.target
-  const files = <FileList>target.files
+  const target = event.target as HTMLInputElement
+  const files = target.files as FileList
 
   form.values.set(field.name, files[0])
 

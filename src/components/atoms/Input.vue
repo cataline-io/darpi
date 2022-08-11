@@ -9,7 +9,6 @@
     </div>
 
     <input
-      step="0.1"
       :id="field.name"
       :name="field.name"
       :type="inputType"
@@ -89,7 +88,7 @@ function onBlur() {
 }
 
 function onInput(event: Event) {
-  const target = <HTMLInputElement>event.target
+  const target = event.target as HTMLInputElement
 
   if (field.mask) {
     target.value = mask.handler(event as any)

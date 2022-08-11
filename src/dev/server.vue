@@ -40,8 +40,7 @@
 
     <br />
 
-    <Field name="drink2" label="Drink" as="select">
-      <option disabled selected>select a drink</option>
+    <Field name="drink2" label="Drink" as="select" placeholder="test">
       <option value="coffee">Coffee</option>
       <option value="tea">Tea</option>
       <option value="coke">Coke</option>

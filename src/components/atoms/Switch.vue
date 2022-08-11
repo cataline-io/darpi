@@ -33,7 +33,7 @@ const classes = computed(() => ({
 }))
 
 const hasSlotContent = computed(() => {
-  return <number>slots.default!()[0].children?.length >= 1
+  return slots.default!()[0].children?.length as number >= 1
 })
 
 onChangePropValue({ run: 'immediate' }, (value) => {
@@ -41,7 +41,7 @@ onChangePropValue({ run: 'immediate' }, (value) => {
 })
 
 function onChange(event: Event) {
-  const target = <HTMLInputElement>event.target
+  const target = event.target as HTMLInputElement
 
   form.values.set(field.name, target.checked)
 

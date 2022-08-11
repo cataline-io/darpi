@@ -23,6 +23,10 @@ export function useSelectedText() {
     if (selected) {
       return selected.text || ''
     }
+
+    if (field.placeholder) {
+      return field.placeholder || ''
+    }
   })
 
   return { selectedText }

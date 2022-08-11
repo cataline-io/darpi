@@ -7,6 +7,7 @@
   outline: none;
   width: 100%;
   box-sizing: border-box;
+  transition: all 0.4s ease-in-out;
   &::placeholder {
     color: var(--text-2);
   }

@@ -48,7 +48,7 @@ form.values.watch(field.name, (value) => {
 })
 
 function onChange(event: Event) {
-  const target = <HTMLInputElement>event.target
+  const target = event.target as HTMLInputElement
 
   form.values.set(field.name, target.value)
 

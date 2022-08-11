@@ -112,7 +112,7 @@ function onSelect(value: any) {
 }
 
 function onMouseEnter(event: MouseEvent) {
-  const target = <HTMLElement>event.target
+  const target = event.target as HTMLElement
   const items = selectRef.value!.querySelectorAll('.item')
 
   items.forEach((item) => item.classList.remove('hover'))
@@ -121,7 +121,7 @@ function onMouseEnter(event: MouseEvent) {
 }
 
 function onMouseLeave(event: MouseEvent) {
-  const target = <HTMLElement>event.target
+  const target = event.target as HTMLElement
 
   target.classList.remove('hover')
 }

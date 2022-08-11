@@ -41,7 +41,7 @@ onChangePropValue({ run: 'immediate' }, (value) => {
 })
 
 function onChange(event: Event) {
-  const target = <HTMLInputElement>event.target
+  const target = event.target as HTMLInputElement
 
   form.values.set(field.name, target.checked)
 

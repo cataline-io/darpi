@@ -55,7 +55,7 @@ function onBlur() {
 }
 
 function onInput(event: Event) {
-  const target = <HTMLInputElement>event.target
+  const target = event.target as HTMLInputElement
 
   form.values.set(field.name, target.value)
 
