@@ -1,5 +1,5 @@
 <template>
-  <div class="field" :data-field-name="name">
+  <div class="field" :data-field="name">
     <span v-if="label" class="label">
       {{ label }}
     </span>
