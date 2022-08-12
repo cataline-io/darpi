@@ -27,7 +27,11 @@ class FileSchema<T extends File | undefined> extends MixedSchema<T> {
       params: { extnames: extnames.join(', ') },
       message: message || baseConfig.messages.file.extnames,
       test: (value: File, params: Params) => {
-        return params.extnames.includes(value.name.split('.').pop()!)
+        const fileExt = value.name.split('.').pop()!.toLowerCase()
+
+        return params.extnames.split(', ').some((extname) => {
+          return extname.toLowerCase() === fileExt
+        })
       }
     })
 

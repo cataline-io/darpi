@@ -1,7 +1,5 @@
 <template>
   <Form :form="form">
-    <pre>{{ form.errors.all }}</pre>
-
     <customField name="custom" />
 
     <Field name="darkMode" as="checkbox" :value="true"> Dark Mode </Field>
@@ -24,9 +22,19 @@
 
     <Field name="email" label="Email" placeholder="example@example.com" />
 
-    <Field name="password" label="Password" type="password" placeholder="******" />
+    <Field
+      name="password"
+      label="Password"
+      type="password"
+      placeholder="******"
+    />
 
-    <Field name="phone" label="Phone Number" placeholder="(99) 9.9999-9999" mask="(99) 9.9999-9999" />
+    <Field
+      name="phone"
+      label="Phone Number"
+      placeholder="(99) 9.9999-9999"
+      mask="(99) 9.9999-9999"
+    />
 
     <Field name="url" label="URL" prefix="https://" suffix=".com" />
 
@@ -56,7 +64,12 @@
       <option value="12">Outro</option>
     </Field>
 
-    <Field name="description" label="Description" as="textarea" placeholder="description here" />
+    <Field
+      name="description"
+      label="Description"
+      as="textarea"
+      placeholder="description here"
+    />
 
     <Field name="avatar" label="Avatar" as="file" />
 
@@ -86,6 +99,7 @@ const form = darpi.newForm({
   password: darpi.string().required().minLength(6),
   phone: darpi.string().required().minLength(6),
   url: darpi.string().required(),
+  avatar: darpi.file().extnames(['heic', 'png']).size('50mb').required(),
   search: darpi.string().required(),
   drink: darpi.string().required().oneOf(['coffee', 'tea', 'coke']),
   drink2: darpi.string().required().oneOf(['coffee', 'tea', 'coke']),

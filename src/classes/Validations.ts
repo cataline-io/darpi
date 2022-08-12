@@ -78,7 +78,6 @@ export default class Validations<T extends Record<string, any>> {
     })
 
     validations.forEach((validation) => {
-      // if (this.errors.hasAnyIn(field)) return
       const { name, message, params, test } = validation
 
       const error = {
