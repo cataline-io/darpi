@@ -21,7 +21,7 @@ export default class Validations<T extends Record<string, any>> {
   private values: Public<Values<T>>
   private errors: Public<Errors<T>>
   private schema: Schema = {}
-  public customValidations: CustomValidation[] = []
+  private customValidations: CustomValidation[] = []
 
   constructor(
     schema: Schema,
