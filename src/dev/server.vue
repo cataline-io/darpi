@@ -20,6 +20,8 @@
 
     <Field name="fullName" label="Full Name" />
 
+    <Field name="fullName" label="Full Name" value="test" disabled/>
+
     <Field name="email" label="Email" placeholder="example@example.com" />
 
     <Field

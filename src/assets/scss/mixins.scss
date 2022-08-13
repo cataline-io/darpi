@@ -15,8 +15,7 @@
 
 @mixin input-disabled-style() {
   background-color: var(--disabled);
-  color: var(--text-3);
-  border: 1px solid var(--disabled);
+  color: var(--text-2);
   cursor: not-allowed;
   &::placeholder {
     color: var(--text-3);
