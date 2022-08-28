@@ -3,7 +3,6 @@ import { useInject } from './useInject'
 import * as symbols from '@/symbols'
 import { useOptions } from './useOptions'
 
-
 export function useSelectedText() {
   const { form } = useInject(symbols.formProps)
   const field = useInject(symbols.fieldProps)
@@ -12,7 +11,7 @@ export function useSelectedText() {
   const selectedText = computed(() => {
     const formValue = form.values.get(field.name)
 
-    if (formValue) {
+    if (![undefined, null].includes(formValue)) {
       const option = options.value.find(({ value }) => value === formValue)
 
       return option?.text || ''

@@ -6,6 +6,7 @@ configure({
   locale: 'ptBR'
 })
 
-import Dev from './server.vue'
+// import Dev from './server.vue'
+import select from './select.vue'
 
-createApp(Dev).mount('#app')
+createApp(select).mount('#app')
